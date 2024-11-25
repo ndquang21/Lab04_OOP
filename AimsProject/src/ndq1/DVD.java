@@ -27,7 +27,12 @@ public class DVD {
         this.author = author;
         this.length = length;
     }
-
+    
+    // Setter cho tiêu đề
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    
     // Getter cho tiêu đề
     public String getTitle() {
         return title;
