@@ -1,4 +1,6 @@
-package ndq1;
+package hust.soict.dsai.aims.store;
+
+import hust.soict.dsai.aims.disc.DVD;
 
 public class Store {
     private DVD[] itemsInStore; // Mảng chứa danh sách DVD trong cửa hàng
