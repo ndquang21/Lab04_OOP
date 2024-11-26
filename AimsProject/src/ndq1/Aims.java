@@ -27,5 +27,8 @@ public class Aims {
 
         // Hiển thị tổng giá sau khi xóa
         System.out.println("Tổng giá của các DVD trong giỏ hàng sau khi xóa: " + cart.totalPrice());
+        
+        // In giỏ hàng
+        cart.printCart();
     }
 }

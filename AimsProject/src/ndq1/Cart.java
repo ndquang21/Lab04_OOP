@@ -81,4 +81,22 @@ public class Cart {
         }
         return total;
     }
+    // In giỏ hàng
+    public void printCart() {
+        System.out.println("***********************CART***********************");
+        System.out.println("Ordered Items:");
+        for (int i = 0; i < qtyOrdered; i++) {
+            DVD disc = itemsOrdered[i];
+            System.out.printf("%d. DVD - %s - %s - %s - %d mins: %.2f $\n",
+                              i + 1,
+                              disc.getTitle(),
+                              disc.getCategory(),
+                              disc.getAuthor(),
+                              disc.getLength(),
+                              disc.getPrice());
+        }
+        System.out.println("Total cost: " + totalPrice() + " $");
+        System.out.println("***************************************************");
+    }
+
 }
