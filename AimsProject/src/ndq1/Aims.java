@@ -30,5 +30,15 @@ public class Aims {
         
         // In giỏ hàng
         cart.printCart();
+        
+        // Tìm kiếm theo ID
+        System.out.println("\nTìm kiếm theo ID:");
+        cart.searchByID(1); // Tìm DVD với ID 1
+        cart.searchByID(2); // Tìm DVD id 2 không tồn tại do đã xóa
+
+        // Tìm kiếm theo tiêu đề
+        System.out.println("\nTìm kiếm theo tiêu đề:");
+        cart.searchByTitle("Doraemon"); // Tìm DVD có tiêu đề "Doraemon"
+        cart.searchByTitle("Avatar");    // Tìm DVD không tồn tại
     }
 }

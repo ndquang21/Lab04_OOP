@@ -98,5 +98,35 @@ public class Cart {
         System.out.println("Total cost: " + totalPrice() + " $");
         System.out.println("***************************************************");
     }
+    
+    // Tìm kiếm bằng ID
+    public void searchByID(int id) {
+        boolean found = false;
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (itemsOrdered[i].getId() == id) {
+                System.out.println("Tìm thấy DVD:\n" + itemsOrdered[i].toString());
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("Không tìm thấy DVD với ID: " + id);
+        }
+    }
 
+    
+    // Tìm kiếm bằng title
+    public void searchByTitle(String title) {
+        boolean found = false;
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (itemsOrdered[i].isMatch(title)) {
+                System.out.println("Tìm thấy DVD:\n" + itemsOrdered[i].toString());
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("Không tìm thấy DVD với tiêu đề: " + title);
+        }
+    }
 }
