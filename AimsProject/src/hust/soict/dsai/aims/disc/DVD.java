@@ -1,4 +1,4 @@
-package ndq1;
+package hust.soict.dsai.aims.disc;
 
 public class DVD {
     private String title;

@@ -1,4 +1,7 @@
-package ndq1;
+package hust.soict.dsai.aims.cart;
+
+import hust.soict.dsai.aims.disc.DVD;
+
 public class Cart {
     private int qtyOrdered = 0;      // Số lượng DVD đã được đặt hàng
     private DVD[] itemsOrdered;      // Mảng chứa các DVD đã đặt hàng

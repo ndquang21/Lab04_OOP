@@ -1,4 +1,6 @@
-package ndq1;
+package hust.soict.dsai.test.disc;
+
+import hust.soict.dsai.aims.disc.DVD;
 
 public class TestPassingParameter {
 
