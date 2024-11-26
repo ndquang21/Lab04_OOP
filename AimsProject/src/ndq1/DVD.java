@@ -78,4 +78,21 @@ public class DVD {
     public static int getNbDigitalVideoDiscs() {
         return nbDigitalVideoDiscs;
     }
+    
+    @Override
+    public String toString() {
+        return String.format("DVD - Title: %s, Category: %s, Author: %s, Length: %d mins, Price: %.2f $",
+                             title,
+                             category != null ? category : "N/A",
+                             author != null ? author : "N/A",
+                             length,
+                             price);
+    }
+    
+    // so sánh tiêu đề
+    public boolean isMatch(String title) {
+        return this.title.equalsIgnoreCase(title); // So sánh không phân biệt hoa thường
+    }
+
+
 }

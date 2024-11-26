@@ -104,7 +104,7 @@ public class Cart {
         boolean found = false;
         for (int i = 0; i < qtyOrdered; i++) {
             if (itemsOrdered[i].getId() == id) {
-                System.out.println("Tìm thấy DVD: " + itemsOrdered[i].getTitle());
+                System.out.println("Tìm thấy DVD:\n" + itemsOrdered[i].toString());
                 found = true;
                 break;
             }
@@ -113,13 +113,14 @@ public class Cart {
             System.out.println("Không tìm thấy DVD với ID: " + id);
         }
     }
+
     
     // Tìm kiếm bằng title
     public void searchByTitle(String title) {
         boolean found = false;
         for (int i = 0; i < qtyOrdered; i++) {
-            if (itemsOrdered[i].getTitle().equalsIgnoreCase(title)) {
-                System.out.println("Tìm thấy DVD: " + itemsOrdered[i].getTitle());
+            if (itemsOrdered[i].isMatch(title)) {
+                System.out.println("Tìm thấy DVD:\n" + itemsOrdered[i].toString());
                 found = true;
                 break;
             }
@@ -128,7 +129,4 @@ public class Cart {
             System.out.println("Không tìm thấy DVD với tiêu đề: " + title);
         }
     }
-
-
-
 }
