@@ -1,25 +1,25 @@
 package hust.soict.dsai.test.cart;
 
 import hust.soict.dsai.aims.cart.Cart;
-import hust.soict.dsai.aims.disc.DVD;
+import hust.soict.dsai.aims.media.DVD;
 
 public class CartTest {
     public static void main(String[] args) {
         Cart cart = new Cart();
 
         // Tạo DVD
-        DVD dvd1 = new DVD("The Lion King", "Animation", 19.99f, "Roger Allers", 136);
-        DVD dvd2 = new DVD("Star Wars", "Sci-Fi", 14.99f, "George Lucas", 148);
-        DVD dvd3 = new DVD("Aladin", "Animation", 24.99f);      
+        DVD dvd1 = new DVD(0, "The Lion King", "Animation", 19.99f, "Roger Allers", 136);
+        DVD dvd2 = new DVD(0, "Star Wars", "Sci-Fi", 14.99f, "George Lucas", 148);
+        DVD dvd3 = new DVD(0, "Aladin", "Animation", 24.99f, null, 0);      
      
 
         // Thêm DVD vào giỏ hàng
-        cart.addDVD(dvd1);
-        cart.addDVD(dvd2);
-        cart.addDVD(dvd3);     
+        cart.addMedia(dvd1);
+        cart.addMedia(dvd2);
+        cart.addMedia(dvd3);     
 
         // Xóa một DVD khỏi giỏ hàng
-        cart.removeDVD(dvd2);
+        cart.removeMedia(dvd2);
         
         // In giỏ hàng
         cart.printCart();
