@@ -70,4 +70,23 @@ public class CompactDisc extends Disc implements Playable{
             System.out.println("ERROR: CD length is 0 or less. Cannot play.");
         }
     }
+    
+    @Override
+    public String toString() {
+        String trackList = "";
+        for (Track track : tracks) {
+            trackList += "\n   - " + track.getTitle() + " (" + track.getLength() + " mins)";
+        }
+        return "CD - Title: " + this.getTitle() +
+               ", Category: " + this.getCategory() +
+               ", Artist: " + this.artist +
+               ", Length: " + this.getLength() + " mins" +
+               ", Price: " + this.getCost() + " $" +
+               "\nTracks: " + trackList;
+    }
+
+	public Track[] getTracks() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

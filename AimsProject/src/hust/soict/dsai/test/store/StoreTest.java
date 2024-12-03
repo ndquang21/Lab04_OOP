@@ -14,12 +14,12 @@ public class StoreTest {
         DVD dvd3 = new DVD(0, "Avengers", "Action", 20.0f, "Marvel", 120);
 
         // Thêm DVD vào cửa hàng
-        store.addDVDinStore(dvd1);
-        store.addDVDinStore(dvd2);
-        store.addDVDinStore(dvd3);
+        store.addMedia(dvd1);
+        store.addMedia(dvd2);
+        store.addMedia(dvd3);
 
         // Xóa DVD khỏi cửa hàng
         System.out.println("\nXóa DVD khỏi cửa hàng:");
-        store.removeDVDinStore(dvd2); // Xóa DVD "Cinderella"
+        store.removeMedia(dvd2); // Xóa DVD "Cinderella"
     }
 }

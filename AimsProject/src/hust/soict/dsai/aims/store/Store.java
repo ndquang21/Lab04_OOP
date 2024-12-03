@@ -58,7 +58,7 @@ public class Store {
     }
 
     // Tìm kiếm Media bằng title
-    public void searchByTitle(String title) {
+    public Media searchByTitle(String title) {
         boolean found = false;
         for (Media media : itemsInStore) {
             if (media.getTitle().equalsIgnoreCase(title)) {
@@ -70,5 +70,6 @@ public class Store {
         if (!found) {
             System.out.println("Không tìm thấy Media với tiêu đề: " + title);
         }
+		return null;
     }
 }
