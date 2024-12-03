@@ -1,6 +1,6 @@
 package hust.soict.dsai.aims.media;
 
-public class Track {
+public class Track implements Playable{
     private String title; // Tên bài hát
     private int length;   // Độ dài bài hát
 
@@ -34,6 +34,17 @@ public class Track {
     // Setter cho length
     public void setLength(int length) {
         this.length = length;
+    }
+    
+ // Implement phương thức play
+    @Override
+    public void play() {
+        if (this.length > 0) {
+            System.out.println("Playing track: " + this.title);
+            System.out.println("Track length: " + this.length + " minutes");
+        } else {
+            System.out.println("ERROR: Track length is 0 or less. Cannot play.");
+        }
     }
 
 }

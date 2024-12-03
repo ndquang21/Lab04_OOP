@@ -2,7 +2,7 @@ package hust.soict.dsai.aims.media;
 
 import java.util.ArrayList;
 
-public class CompactDisc extends Disc {
+public class CompactDisc extends Disc implements Playable{
     private String artist; // Tên nghệ sĩ
     private ArrayList<Track> tracks = new ArrayList<>(); // Danh sách các track
 
@@ -42,7 +42,6 @@ public class CompactDisc extends Disc {
         return tracks.stream().mapToInt(Track::getLength).sum(); // Tính tổng độ dài
     }
 
-    // Hiển thị chi tiết CompactDisc
     @Override
     public void viewDetails() {
         System.out.println("CD Details:");
@@ -57,4 +56,19 @@ public class CompactDisc extends Disc {
             System.out.println("- " + track.getTitle() + " (" + track.getLength() + " mins)");
         }
     }
+    
+ // Implement phương thức play
+    @Override
+    public void play() {
+        if (this.getLength() > 0) {
+            System.out.println("Playing CD: " + this.getTitle());
+            System.out.println("CD length: " + this.getLength() + " minutes");
+            for (Track track : tracks) {
+                track.play(); // Gọi play() của từng track
+            }
+        } else {
+            System.out.println("ERROR: CD length is 0 or less. Cannot play.");
+        }
+    }
+
 }
