@@ -1,1 +1,15 @@
-Java is a pass by value programming language
+1.Lớp nào nên implement interface Comparable?
+
+Lớp Media hoặc các lớp con như DVD, CompactDisc, Book nên implement Comparable.
+
+2. Cách implement phương thức compareTo() để sắp xếp theo yêu cầu?
+
+So sánh theo title trước, sau đó cost.
+
+3. Có thể có hai quy tắc sắp xếp khác nhau không khi sử dụng Comparable?
+
+Không, Comparable chỉ hỗ trợ một quy tắc sắp xếp duy nhất. Để có nhiều quy tắc, phải dùng Comparator.
+
+4. Làm sao để DVD có quy tắc sắp xếp khác với các media khác (title, chiều dài giảm dần, cost)?
+
+Override phương thức compareTo() trong lớp DVD, so sánh theo title, chiều dài giảm dần, rồi cost.
