@@ -1,13 +1,13 @@
 package hust.soict.dsai.aims.media;
 
-public class DVD extends Disc {
+public class DVD extends Disc implements Playable{
 
     // Classifier Member
     private static int nbDigitalVideoDiscs = 0;
 
 
     // Constructor với tất cả thuộc tính
-    public DVD(String title, String category, float cost, String director, int length) {
+    public DVD(int id, String title, String category, float cost, String director, int length) {
         super(++nbDigitalVideoDiscs, title, category, cost, length, director); 
         this.director = director;
         this.length = length;  
@@ -44,5 +44,16 @@ public class DVD extends Disc {
         System.out.println("Author: " + (director != null ? director : "N/A"));
         System.out.println("Length: " + length + " mins");
         System.out.println("Price: " + this.getCost() + " $");
+    }
+    
+ // Implement phương thức play
+    @Override
+    public void play() {
+        if (this.getLength() > 0) {
+            System.out.println("Playing DVD: " + this.getTitle());
+            System.out.println("DVD length: " + this.getLength() + " minutes");
+        } else {
+            System.out.println("ERROR: DVD length is 0 or less. Cannot play.");
+        }
     }
 }
