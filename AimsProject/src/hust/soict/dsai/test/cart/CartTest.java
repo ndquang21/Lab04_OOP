@@ -1,7 +1,7 @@
 package hust.soict.dsai.test.cart;
 
 import hust.soict.dsai.aims.cart.Cart;
-import hust.soict.dsai.aims.disc.DVD;
+import hust.soict.dsai.aims.media.DVD;
 
 public class CartTest {
     public static void main(String[] args) {
@@ -10,7 +10,7 @@ public class CartTest {
         // Tạo DVD
         DVD dvd1 = new DVD("The Lion King", "Animation", 19.99f, "Roger Allers", 136);
         DVD dvd2 = new DVD("Star Wars", "Sci-Fi", 14.99f, "George Lucas", 148);
-        DVD dvd3 = new DVD("Aladin", "Animation", 24.99f);      
+        DVD dvd3 = new DVD("Aladin", "Animation", 24.99f, null, 0);      
      
 
         // Thêm DVD vào giỏ hàng
