@@ -1,6 +1,6 @@
 package hust.soict.dsai.aims.cart;
 
-import hust.soict.dsai.aims.disc.DVD;
+import hust.soict.dsai.aims.media.DVD;
 
 public class Cart {
     private int qtyOrdered = 0;      // Số lượng DVD đã được đặt hàng
@@ -80,7 +80,7 @@ public class Cart {
     public float totalPrice() {
         float total = 0;
         for (int i = 0; i < qtyOrdered; i++) {
-            total += itemsOrdered[i].getPrice();
+            total += itemsOrdered[i].getCost();
         }
         return total;
     }
@@ -94,9 +94,9 @@ public class Cart {
                               i + 1,
                               disc.getTitle(),
                               disc.getCategory(),
-                              disc.getAuthor(),
+                              disc.getDirector(),
                               disc.getLength(),
-                              disc.getPrice());
+                              disc.getCost());
         }
         System.out.println("Total cost: " + totalPrice() + " $");
         System.out.println("***************************************************");

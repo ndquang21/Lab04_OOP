@@ -1,13 +1,13 @@
 package hust.soict.dsai.test.disc;
 
-import hust.soict.dsai.aims.disc.DVD;
+import hust.soict.dsai.aims.media.DVD;
 
 public class TestPassingParameter {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		DVD jungleDVD = new DVD("Jungle");
-		DVD cinderellaDVD = new DVD("Cinderella");
+		DVD jungleDVD = new DVD("Jungle", null, 0, null, 0);
+		DVD cinderellaDVD = new DVD("Cinderella", null, 0, null, 0);
 		
 		swapTitle(jungleDVD, cinderellaDVD);
 		System.out.println("jungle dvd title: " + jungleDVD.getTitle());
