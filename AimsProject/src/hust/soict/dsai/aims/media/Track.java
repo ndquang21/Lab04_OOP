@@ -1,5 +1,7 @@
 package hust.soict.dsai.aims.media;
 
+import hust.soict.dsai.aims.exception.PlayerException;
+
 public class Track implements Playable {
     private String title;
     private int length;
@@ -29,12 +31,12 @@ public class Track implements Playable {
 
     // Implement phương thức play
     @Override
-    public void play() {
+    public void play() throws PlayerException{
         if (this.length > 0) {
             System.out.println("Playing track: " + this.title);
             System.out.println("Track length: " + this.length + " minutes");
         } else {
-            System.out.println("ERROR: Track length is 0 or less. Cannot play.");
+            throw new PlayerException("ERROR: Track length is 0 or less. Cannot play.");
         }
     }
 

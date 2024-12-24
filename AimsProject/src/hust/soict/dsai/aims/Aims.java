@@ -1,6 +1,7 @@
 package hust.soict.dsai.aims;
 
 import hust.soict.dsai.aims.cart.Cart;
+import hust.soict.dsai.aims.exception.PlayerException;
 import hust.soict.dsai.aims.media.*;
 import hust.soict.dsai.aims.store.Store;
 
@@ -10,7 +11,7 @@ public class Aims {
     private static Store store = new Store();
     private static Cart cart = new Cart();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws PlayerException {
         Scanner scanner = new Scanner(System.in);
 
       
@@ -22,7 +23,7 @@ public class Aims {
     }
 
     // Hiển thị menu chính
-    public static void showMenu(Scanner scanner) {
+    public static void showMenu(Scanner scanner) throws PlayerException {
         System.out.println("AIMS: ");
         System.out.println("--------------------------------");
         System.out.println("1. View store");
@@ -55,7 +56,7 @@ public class Aims {
     }
 
     // Hiển thị menu cửa hàng
-    public static void storeMenu(Scanner scanner) {
+    public static void storeMenu(Scanner scanner) throws PlayerException {
         while (true) {
             System.out.println("Options: ");
             System.out.println("--------------------------------");
@@ -92,7 +93,7 @@ public class Aims {
     }
 
     // Xem chi tiết media
-    public static void seeMediaDetails(Scanner scanner) {
+    public static void seeMediaDetails(Scanner scanner) throws PlayerException {
         System.out.println("Enter the title of the media:");
         String title = scanner.nextLine();
         Media media = store.searchByTitle(title);
@@ -105,7 +106,7 @@ public class Aims {
     }
 
     // Menu các lựa chọn khi xem chi tiết media
-    public static void mediaDetailsMenu(Scanner scanner, Media media) {
+    public static void mediaDetailsMenu(Scanner scanner, Media media) throws PlayerException {
         while (true) {
             System.out.println("Options: ");
             System.out.println("--------------------------------");
@@ -147,7 +148,7 @@ public class Aims {
     }
 
     // Phát media
-    public static void playMedia(Scanner scanner) {
+    public static void playMedia(Scanner scanner) throws PlayerException {
         System.out.println("Enter the title of the media to play:");
         String title = scanner.nextLine();
         Media media = store.searchByTitle(title);
@@ -226,7 +227,7 @@ public class Aims {
     }
 
     // Xem giỏ hàng hiện tại
-    public static void cartMenu(Scanner scanner) {
+    public static void cartMenu(Scanner scanner) throws PlayerException {
         while (true) {
             System.out.println("Options: ");
             System.out.println("--------------------------------");

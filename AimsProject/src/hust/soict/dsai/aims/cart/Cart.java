@@ -1,12 +1,14 @@
 package hust.soict.dsai.aims.cart;
 
 import hust.soict.dsai.aims.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 
 public class Cart {
-    private ArrayList<Media> itemsOrdered = new ArrayList<>(); // Danh sách Media trong giỏ hàng
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList(); // Danh sách Media trong giỏ hàng
 
     // Thêm một Media vào giỏ hàng
     public void addMedia(Media media) {
@@ -115,5 +117,11 @@ public class Cart {
 	        System.out.println("Your cart is now empty.");
 	    }
 	}
+
+public ObservableList<Media> getItemsOrdered() {
+    return itemsOrdered;
+}
+
+
 
 }

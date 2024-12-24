@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="358.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.dsai.aims.screen.AddBookToStoreScreenController">
+   <top>
+      <VBox prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="Option">
+                     <items>
+                        <Menu mnemonicParsing="false" text="Update Store">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Add Book" />
+                              <MenuItem mnemonicParsing="false" text="Add CD" />
+                              <MenuItem mnemonicParsing="false" text="Add DVD" />
+                          </items>
+                        </Menu>
+                        <MenuItem mnemonicParsing="false" text="View Store" />
+                        <MenuItem mnemonicParsing="false" text="View Cart" />
+                     </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label text="ADD BOOK" textFill="AQUA">
+               <font>
+                  <Font size="50.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="txtTitle" prefHeight="25.0" prefWidth="481.0">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="txtCategory">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="txtCost">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Button fx:id="btnAddBook" mnemonicParsing="false" onAction="#addBook" prefHeight="25.0" prefWidth="129.0" text="Add book" textAlignment="CENTER" wrapText="true">
+               <VBox.margin>
+                  <Insets bottom="40.0" left="350.0" right="40.0" top="40.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

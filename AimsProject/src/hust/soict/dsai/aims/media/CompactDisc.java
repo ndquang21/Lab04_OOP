@@ -2,6 +2,8 @@ package hust.soict.dsai.aims.media;
 
 import java.util.ArrayList;
 
+import hust.soict.dsai.aims.exception.PlayerException;
+
 public class CompactDisc extends Disc implements Playable{
     private String artist; // Tên nghệ sĩ
     private ArrayList<Track> tracks = new ArrayList<>(); // Danh sách các track
@@ -59,7 +61,7 @@ public class CompactDisc extends Disc implements Playable{
     
  // Implement phương thức play
     @Override
-    public void play() {
+    public void play() throws PlayerException{
         if (this.getLength() > 0) {
             System.out.println("Playing CD: " + this.getTitle());
             System.out.println("CD length: " + this.getLength() + " minutes");
@@ -67,7 +69,7 @@ public class CompactDisc extends Disc implements Playable{
                 track.play(); // Gọi play() của từng track
             }
         } else {
-            System.out.println("ERROR: CD length is 0 or less. Cannot play.");
+            throw new PlayerException("ERROR: CD length is 0 or less. Cannot play.");
         }
     }
     

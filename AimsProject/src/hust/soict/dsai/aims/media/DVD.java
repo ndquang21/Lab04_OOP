@@ -1,5 +1,7 @@
 package hust.soict.dsai.aims.media;
 
+import hust.soict.dsai.aims.exception.PlayerException;
+
 public class DVD extends Disc implements Playable {
 
     // Classifier Member
@@ -44,12 +46,12 @@ public class DVD extends Disc implements Playable {
 
     // Implement phương thức play từ Playable interface
     @Override
-    public void play() {
+    public void play() throws PlayerException{
         if (this.getLength() > 0) {
             System.out.println("Playing DVD: " + this.getTitle());
             System.out.println("DVD length: " + this.getLength() + " minutes");
         } else {
-            System.out.println("ERROR: DVD length is 0 or less. Cannot play.");
+            throw new PlayerException("ERROR: DVD length is 0 or less. Cannot play.");
         }
     }
 }

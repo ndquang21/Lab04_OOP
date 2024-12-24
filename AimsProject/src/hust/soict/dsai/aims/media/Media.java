@@ -1,5 +1,7 @@
 package hust.soict.dsai.aims.media;
 
+import hust.soict.dsai.aims.exception.PlayerException;
+
 public abstract class Media {
     protected int id;
     protected String title;
@@ -69,7 +71,7 @@ public abstract class Media {
     // Abstract method for viewing media details
     public abstract void viewDetails();
     
-    public void play() {
+    public void play() throws PlayerException {
         if (this instanceof CompactDisc) {  // Nếu là CD
             CompactDisc cd = (CompactDisc) this;
             if (cd.getLength() > 0) {
@@ -79,7 +81,7 @@ public abstract class Media {
                     track.play();
                 }
             } else {
-                System.out.println("ERROR: CD length is 0 or less. Cannot play.");
+                throw new PlayerException("ERROR: CD length is 0 or less. Cannot play.");
             }
         } else if (this instanceof DVD) {  // Nếu là DVD
         	DVD dvd = (DVD) this;
@@ -90,7 +92,7 @@ public abstract class Media {
                 System.out.println("ERROR: DVD length is 0 or less. Cannot play.");
             }
         } else {
-            System.out.println("ERROR: This media cannot be played.");
+        	throw new PlayerException("ERROR: This media cannot be played.");
         }
     }
 
